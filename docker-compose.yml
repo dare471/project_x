@@ -1,0 +1,32 @@
+services:
+    backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        volumes:
+            - ./backend:/var/www
+        ports:
+            - "8000:80"
+        networks:
+            - app-network
+        depends_on:
+            - db
+            - redis
+
+    db:
+        image: postgres:13
+        environment:
+            POSTGRES_DB: app
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
+        networks:
+            - app-network
+
+    redis:
+        image: redis:latest
+        networks:
+            - app-network
+
+networks:
+    app-network:
+        driver: bridge
