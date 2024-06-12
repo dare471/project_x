@@ -18,8 +18,10 @@ RUN docker-php-ext-install pdo pdo_pgsql zip
 # Установка Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Копирование кода приложения
+# Установка рабочей директории
 WORKDIR /var/www
+
+# Копирование кода приложения
 COPY . .
 
 # Установка зависимостей приложения
