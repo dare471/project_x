@@ -18,6 +18,11 @@ RUN docker-php-ext-install pdo pdo_pgsql zip
 # Установка Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# permision
+RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache \
+    && chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+
+
 # Установка рабочей директории
 WORKDIR /var/www
 
