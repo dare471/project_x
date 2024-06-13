@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Staff\Tasks;
+namespace App\Http\Controllers\InternalUsers\Tasks;
 
 use App\Http\Controllers\Controller;
 use App\Models\c;
