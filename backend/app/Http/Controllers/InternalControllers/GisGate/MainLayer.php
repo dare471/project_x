@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\InternalUsers\Tasks;
+namespace App\Http\Controllers\InternalControllers\GisGate;
 
 use App\Http\Controllers\Controller;
 use App\Models\c;
 use Illuminate\Http\Request;
 
-class MyTask extends Controller
+class MainLayer extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        //
-
         //
     }
 
@@ -21,8 +22,6 @@ class MyTask extends Controller
     public function create()
     {
         //
-
-        //
     }
 
     /**
@@ -30,8 +29,6 @@ class MyTask extends Controller
      */
     public function store(Request $request)
     {
-        //
-
         //
     }
 
