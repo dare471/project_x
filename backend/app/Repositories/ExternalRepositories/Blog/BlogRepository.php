@@ -8,7 +8,9 @@ class BlogRepository implements BlogRepositoryInterface
 {
     public function getAllBlogs()
     {
-        return Blog::all();
+        return Blog::join('users', 'blogs.author_id', '=', 'users.id')
+            ->select('blogs.*', 'users.name as author_name')
+            ->get();
     }
 
     public function getBlogById($id)

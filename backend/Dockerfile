@@ -35,6 +35,10 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader --verb
 # Настройка прав доступа
 RUN chown -R www-data:www-data /var/www
 
+# Выполнение миграций и сидирования базы данных
+RUN php artisan migrate --force
+RUN php artisan db:seed --force
+
 # Копирование конфигурации Nginx
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
