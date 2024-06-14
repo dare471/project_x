@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExternalUsers\Blog\MyBlog;
+use App\Http\Controllers\ExternalUsers\Blog\Utilites\BlogCategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -14,4 +15,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/blogs', [MyBlog::class, 'store']); // Создание нового блога
     Route::put('/blogs/{id}', [MyBlog::class, 'update']); // Обновление существующего блога
     Route::delete('/blogs/{id}', [MyBlog::class, 'destroy']); // Удаление блога
+    // Маршруты для категорий
+    Route::get('/blogs/categories', [BlogCategoryController::class, 'index']);
+    Route::get('/blogs/categories/{id}', [BlogCategoryController::class, 'show']);
+    Route::post('/blogs/categories', [BlogCategoryController::class, 'store']);
+    Route::put('/blogs/categories/{id}', [BlogCategoryController::class, 'update']);
+    Route::delete('/blogs/categories/{id}', [BlogCategoryController::class, 'destroy']);
 });
