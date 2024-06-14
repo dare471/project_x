@@ -22,6 +22,6 @@ class Visit extends Model
 
     public function employee()
     {
-        return $this->belongsTo(InternalUser::class, 'employee_id');
+        return $this->belongsTo(Client::class, 'employee_id');
     }
 }

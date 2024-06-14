@@ -3,16 +3,21 @@
 namespace Database\Seeders;
 
 use App\Models\Blog;
+use App\Models\User;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+
 class BlogSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        Blog::factory()->count(10)->create();
+        User::factory()->count(5)->create()->each(function ($user) {
+            // Создать 2 блога для каждого пользователя
+            Blog::factory()->count(2)->create([
+                'author_id' => $user->id,
+            ]);
+        });
     }
 }
