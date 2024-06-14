@@ -23,6 +23,12 @@ class UserFactory extends Factory
         return [
             'id' => (string) Str::ulid(),
             'name' => $this->faker->name,
+            'lastName' => $this->faker->lastName,
+            'surName' => $this->faker->lastName,
+            'bin' => $this->faker->numerify('################') . $this->faker->randomDigit(),
+            'region' => $this->faker->city,
+            'telephone' => $this->faker->phoneNumber,
+            'telephone_verified_at' => now(),
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),
             'password' => bcrypt('password'), // password

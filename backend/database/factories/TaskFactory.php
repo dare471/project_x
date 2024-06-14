@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\InternalUser;
 use App\Models\Task;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -16,7 +15,7 @@ class TaskFactory extends Factory
     public function definition()
     {
         return [
-            'employee_id' => InternalUser::factory(),
+            'employee_id' => '01J0AK0SSXHF79F9T4B6F5FX1Z',
             'task_title' => $this->faker->sentence,
             'task_description' => $this->faker->paragraph,
             'due_date' => $this->faker->date,

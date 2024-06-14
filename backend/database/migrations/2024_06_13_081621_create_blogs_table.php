@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('author_id');
+            $table->ulid('author_id');
             $table->string('title');
             $table->text('content');
             $table->timestamps();
 
             // Set foreign key constraint
-            $table->foreign('author_id')->references('id')->on('external_users')->onDelete('cascade');
+            $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

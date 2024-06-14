@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\Blog;
-use App\Models\ExternalUser;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -15,7 +14,7 @@ class BlogFactory extends Factory
     public function definition()
     {
         return [
-            'author_id' => ExternalUser::factory(),
+            'author_id' => '01J0AK0SSXHF79F9T4B6F5FX1Z',
             'title' => $this->faker->sentence,
             'content' => $this->faker->paragraph,
         ];
