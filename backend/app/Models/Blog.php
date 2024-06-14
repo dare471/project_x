@@ -12,6 +12,7 @@ class Blog extends Model
         'author_id',
         'title',
         'content',
+        'category_id',
     ];
 
     public function author()
