@@ -8,11 +8,10 @@ use Illuminate\Http\Request;
 
 class MyTask extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
+        //
+
         //
     }
 
@@ -22,6 +21,8 @@ class MyTask extends Controller
     public function create()
     {
         //
+
+        //
     }
 
     /**
@@ -29,6 +30,8 @@ class MyTask extends Controller
      */
     public function store(Request $request)
     {
+        //
+
         //
     }
 

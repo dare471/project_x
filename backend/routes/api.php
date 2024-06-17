@@ -1,19 +1,24 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\ExternalUsers\Blog\MyBlog;
+use App\Http\Controllers\ExternalUsers\Blog\Utilites\BlogCategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/blogs', [MyBlog::class, 'index']); // Получение всех блогов
+    Route::get('/blogs/{id}', [MyBlog::class, 'show']); // Получение конкретного блога
+    Route::post('/blogs', [MyBlog::class, 'store']); // Создание нового блога
+    Route::put('/blogs/{id}', [MyBlog::class, 'update']); // Обновление существующего блога
+    Route::delete('/blogs/{id}', [MyBlog::class, 'destroy']); // Удаление блога
+    // Маршруты для категорий
+    Route::get('/blogs/categories', [BlogCategoryController::class, 'index']);
+    Route::get('/blogs/categories/{id}', [BlogCategoryController::class, 'show']);
+    Route::post('/blogs/categories', [BlogCategoryController::class, 'store']);
+    Route::put('/blogs/categories/{id}', [BlogCategoryController::class, 'update']);
+    Route::delete('/blogs/categories/{id}', [BlogCategoryController::class, 'destroy']);
 });

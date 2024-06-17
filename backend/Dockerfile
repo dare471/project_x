@@ -18,6 +18,11 @@ RUN docker-php-ext-install pdo pdo_pgsql zip
 # Установка Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# permision
+RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache \
+    && chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+
+
 # Установка рабочей директории
 WORKDIR /var/www
 
@@ -29,6 +34,10 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader --verb
 
 # Настройка прав доступа
 RUN chown -R www-data:www-data /var/www
+
+# Выполнение миграций и сидирования базы данных
+RUN php artisan migrate --force
+RUN php artisan db:seed --force
 
 # Копирование конфигурации Nginx
 COPY ./nginx.conf /etc/nginx/nginx.conf
