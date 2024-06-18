@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\ExternalUsers\Blog\Utilites;
+namespace App\Http\Controllers\ExternalUsers\Blog\Utilites\Category;
 
-use App\Services\ExternalServices\Category\BlogCategoryService;
+use App\Services\ExternalServices\Blog\Category\CategoryService;
 
 class BlogCategoryController
 {
     protected $categoryService;
 
-    public function __construct(BlogCategoryService $categoryService)
+    public function __construct(CategoryService $categoryService)
     {
         $this->categoryService = $categoryService;
     }

@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\ExternalUsers\Blog\MyBlog;
-use App\Http\Controllers\ExternalUsers\Blog\Utilites\BlogCategoryController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ExternalUsers\Blog\MyBlog;
+use App\Http\Controllers\ExternalUsers\Blog\Utilites\Category\BlogCategoryController;
+use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
