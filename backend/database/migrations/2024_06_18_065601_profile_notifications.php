@@ -19,8 +19,8 @@ return new class extends Migration
             $table->boolean('read')->default(false);
             $table->boolean('unread')->default(false);
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('profile_id')->references('id')->on('profiles');
+//            $table->foreign('user_id')->references('id')->on('users');
+//            $table->foreign('profile_id')->references('id')->on('profiles');
         });
     }
 

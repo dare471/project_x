@@ -18,10 +18,10 @@ return new class extends Migration
             $table->unsignedBigInteger('media_id');
             $table->timestamps();
             $table->unique(['news_id', 'media_id']);
-            $table->foreign('news_id')
-                ->references('id')
-                ->on('news')
-                ->onDelete('cascade');
+//            $table->foreign('news_id')
+//                ->references('id')
+//                ->on('news')
+//                ->onDelete('cascade');
         });
     }
 

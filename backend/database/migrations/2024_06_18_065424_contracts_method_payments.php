@@ -18,8 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('method_id');
             $table->unsignedBigInteger('payment_method_id');
             $table->timestamps();
-            $table->foreign('contract_id')->references('id')->on('contracts')->onDelete('cascade');
-            $table->foreign('method_id')->references('id')->on('methods')->onDelete('cascade');
+//            $table->foreign('contract_id')->references('id')->on('contracts')->onDelete('cascade');
+//            $table->foreign('method_id')->references('id')->on('methods')->onDelete('cascade');
         });
     }
 
