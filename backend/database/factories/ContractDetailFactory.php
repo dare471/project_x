@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Contract;
-use App\Models\ContractDetail;
+use App\Models\Contract\Contract;
+use App\Models\Contract\ContractDetail;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ContractDetail>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Contract\ContractDetail>
  */
 class ContractDetailFactory extends Factory
 {

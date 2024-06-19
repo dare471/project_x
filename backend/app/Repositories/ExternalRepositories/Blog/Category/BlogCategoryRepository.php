@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Repositories\ExternalRepositories\Blog\Category;
-use App\Models\BlogCategory;
+use App\Models\Blog\BlogCategory;
+
 class BlogCategoryRepository implements BlogCategoryRepositoryInterface
 {
     public function getAllCategories()

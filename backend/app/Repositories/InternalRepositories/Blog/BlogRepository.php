@@ -2,7 +2,7 @@
 // app/Repositories/BlogRepository.php
 
 namespace App\Repositories\InternalRepositories\Blog;
-use App\Models\Blog;
+use App\Models\Blog\Blog;
 
 class BlogRepository implements BlogRepositoryInterface
 {

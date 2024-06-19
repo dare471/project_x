@@ -3,12 +3,12 @@
 namespace Database\Factories;
 
 use App\Models\Client;
-use App\Models\Contract;
+use App\Models\Contract\Contract;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Contract>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Contract\Contract>
  */
 class ContractFactory extends Factory
 {

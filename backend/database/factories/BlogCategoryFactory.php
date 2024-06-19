@@ -1,11 +1,11 @@
 <?php
 namespace Database\Factories;
 
-use App\Models\BlogCategory;
+use App\Models\Blog\BlogCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\BlogCategory>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Blog\BlogCategory>
  */
 class BlogCategoryFactory extends Factory
 {

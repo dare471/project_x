@@ -1,7 +1,7 @@
 <?php
 namespace Database\Seeders;
 
-use App\Models\BlogCategory;
+use App\Models\Blog\BlogCategory;
 use Illuminate\Database\Seeder;
 
 class BlogCategorySeeder extends Seeder
