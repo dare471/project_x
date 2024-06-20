@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ExternalUsers\Blog\Category\BlogCategoryController;
 use App\Http\Controllers\ExternalUsers\Blog\MyBlog;
-use App\Http\Controllers\ExternalUsers\Blog\Utilites\Category\BlogCategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login']);

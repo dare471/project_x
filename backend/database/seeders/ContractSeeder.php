@@ -2,8 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Contract;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Contract\Contract;
 use Illuminate\Database\Seeder;
 
 class ContractSeeder extends Seeder

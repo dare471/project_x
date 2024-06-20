@@ -15,9 +15,9 @@ return new class extends Migration
         Schema::create('profile_edit_histories', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('profile_id');
-            $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
+          //  $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
             $table->unsignedBigInteger('history_id');
-            $table->foreign('history_id')->references('id')->on('histories')->onDelete('cascade');
+         //   $table->foreign('history_id')->references('id')->on('histories')->onDelete('cascade');
             $table->timestamps();
         });
     }

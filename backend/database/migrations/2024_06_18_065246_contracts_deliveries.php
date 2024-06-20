@@ -15,9 +15,9 @@ return new class extends Migration
         Schema::create('contract_deliveries', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('contract_id');
-            $table->foreign('contract_id')->references('id')->on('contracts')->onDelete('cascade');
+           // $table->foreign('contract_id')->references('id')->on('contracts')->onDelete('cascade');
             $table->unsignedBigInteger('delivery_id');
-            $table->foreign('delivery_id')->references('id')->on('deliveries')->onDelete('cascade');
+            //$table->foreign('delivery_id')->references('id')->on('deliveries')->onDelete('cascade');
             $table->timestamps();
         });
     }

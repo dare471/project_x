@@ -1,37 +1,36 @@
 <?php
 
 namespace App\Repositories\ExternalRepositories\Blog\Category;
+
 use App\Models\BlogCategory;
+use Illuminate\Database\Eloquent\Collection;
+
 class BlogCategoryRepository implements BlogCategoryRepositoryInterface
 {
-    public function getAllCategories()
+    public function getAll(): Collection
     {
         return BlogCategory::all();
     }
 
-    public function getCategoryById($id)
+    public function getById(int $id): ?BlogCategory
     {
-        return BlogCategory::findOrFail($id);
+        return BlogCategory::find($id);
     }
 
-    public function createCategory(array $data)
+    public function create(array $data): BlogCategory
     {
         return BlogCategory::create($data);
     }
 
-    public function updateCategory($id, array $data)
+    public function update(array $data, int $id): bool
     {
         $category = BlogCategory::findOrFail($id);
-        $category->update($data);
-
-        return $category;
+        return $category->update($data);
     }
 
-    public function deleteCategory($id)
+    public function delete(int $id): bool
     {
         $category = BlogCategory::findOrFail($id);
-        $category->delete();
-
-        return $category;
+        return $category->delete();
     }
 }
