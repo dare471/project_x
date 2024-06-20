@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\ExternalUsers\Blog\Utilites\Category;
+namespace App\Http\Controllers\ExternalUsers\Blog\Category;
 
 use App\Services\ExternalServices\Blog\Category\CategoryService;
 
