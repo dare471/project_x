@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Repositories\ExternalRepositories\Blog\Category;
-
+use App\Models\BlogCategory;
+use Illuminate\Database\Eloquent\Collection;
 interface BlogCategoryRepositoryInterface
 {
-    public function getAllCategories();
-    public function getCategoryById($id);
-    public function createCategory(array $data);
-    public function updateCategory($id, array $data);
-    public function deleteCategory($id);
+    public function getAll(): Collection;
+    public function getById(int $id): ?BlogCategory;
+    public function create(array $data): BlogCategory;
+    public function update(array $data, int $id): bool;
+    public function delete(int $id): bool;
 }
