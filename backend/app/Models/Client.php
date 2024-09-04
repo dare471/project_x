@@ -14,12 +14,23 @@ class Client extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'client_name',
-        'region',
+        'id',
+        'business_identification_number',
+        'name',
+        'registration_date',
+        'activity_code',
+        'activity_description',
+        'latest_activities',
+        'company_size_code',
+        'kato_main_code',
+        'kato_region_code',
+        'kato_district_code',
+        'kato_city_code',
+        'kato_full_address',
         'contact_details',
         'email',
         'phone',
-        'address',
+        'address'
     ];
 
     public function contracts()

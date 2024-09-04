@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/blogs/categories', [BlogCategoryController::class, 'store']);
     Route::put('/blogs/categories/{id}', [BlogCategoryController::class, 'update']);
     Route::delete('/blogs/categories/{id}', [BlogCategoryController::class, 'destroy']);
+    // BlogAuthor
 });

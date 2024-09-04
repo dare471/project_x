@@ -16,9 +16,10 @@ class ClientFactory extends Factory
     public function definition()
     {
         return [
-            'client_id' => (string) Str::ulid(),
-            'client_name' => $this->faker->name,
+            'id' => (string) Str::ulid(),
+            'name' => $this->faker->name,
             'region' => $this->faker->state,
+            'bin' => $this->faker->randomNumber(9, true),
             'contact_details' => $this->faker->phoneNumber,
             'email' => $this->faker->unique()->safeEmail,
             'phone' => $this->faker->phoneNumber,
